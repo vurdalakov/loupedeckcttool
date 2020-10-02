@@ -9,7 +9,7 @@ Notes:
 1. Loupedeck device must be connected via USB cable.
 2. There is no need to start or stop Loupedeck software.
 
-![Screenshot of Loupedeck CT Tool](https://raw.githubusercontent.com/vurdalakov/loupedeckcttool/master/img/loupedeckcttool_1.png)
+![Screenshot of Loupedeck CT Tool](https://github.com/vurdalakov/loupedeckcttool/raw/main/img/loupedeckcttool_1.png)
 
 ### License
 

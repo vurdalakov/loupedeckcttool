@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.checkBoxShowDetails = new System.Windows.Forms.CheckBox();
             this.linkLabelGithub = new System.Windows.Forms.LinkLabel();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // buttonConfigure
@@ -88,11 +89,21 @@
             this.linkLabelGithub.Text = "https://github.com/vurdalakov/loupedeckcttool";
             this.linkLabelGithub.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelGithub_LinkClicked);
             // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(108, 67);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(121, 18);
+            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBar.TabIndex = 5;
+            this.progressBar.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 94);
+            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.linkLabelGithub);
             this.Controls.Add(this.checkBoxShowDetails);
             this.Controls.Add(this.label1);
@@ -102,6 +113,7 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Loupedeck CT Tool";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,6 +126,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox checkBoxShowDetails;
         private System.Windows.Forms.LinkLabel linkLabelGithub;
+        private System.Windows.Forms.ProgressBar progressBar;
     }
 }
 

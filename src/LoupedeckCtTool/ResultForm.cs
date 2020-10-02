@@ -5,14 +5,13 @@
 
     public partial class ResultForm : Form
     {
-        public ResultForm(Boolean errorOccurred, Int32 numberOfLoupedeckNetworkAdaptersModified)
+        public ResultForm(Boolean errorOccurred, String message)
         {
             this.InitializeComponent();
 
             this.Text = errorOccurred ? "Error" : "Success";
 
-            var errorMessage = errorOccurred ? "\r\n\r\nCheck the 'Show details' checkbox to get more information." : "";
-            this.labelResult.Text = $"{numberOfLoupedeckNetworkAdaptersModified} Loupedeck CT/Live interface(s) modified.{errorMessage}";
+            this.labelResult.Text = message;
         }
     }
 }

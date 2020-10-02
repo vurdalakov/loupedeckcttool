@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("This tool solves the problem of slow Internet when Loupedeck CT or Loupedeck Live device is connected.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Vurdalakov")]
-[assembly: AssemblyProduct("LoupedeckCtTool")]
+[assembly: AssemblyProduct("Loupedeck CT Tool")]
 [assembly: AssemblyCopyright("Copyright © 2019 Vurdalakov")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
