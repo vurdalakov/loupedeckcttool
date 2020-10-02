@@ -11,6 +11,12 @@ Notes:
 
 ![Screenshot of Loupedeck CT Tool](https://github.com/vurdalakov/loupedeckcttool/raw/main/img/loupedeckcttool_1.png)
 
+### Download
+
+You can download Windows installer MSI file or portable version in a ZIP file from here:
+
+https://github.com/vurdalakov/loupedeckcttool/releases/
+
 ### License
 
 Distributed under the terms of the [MIT license](https://opensource.org/licenses/MIT).
