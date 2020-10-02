@@ -167,7 +167,7 @@
             }
         }
 
-        private void checkBoxShowDetails_CheckedChanged(object sender, EventArgs e)
+        private void checkBoxShowDetails_CheckedChanged(Object sender, EventArgs e)
         {
             if (this.Height < 300)
             {
@@ -193,7 +193,7 @@
                     this._executeThreadSafeDelegate = new ExecuteThreadSafeDelegate(this.ExecuteThreadSafe);
                 }
 
-                this.BeginInvoke(this._executeThreadSafeDelegate, new object[] { action });
+                this.BeginInvoke(this._executeThreadSafeDelegate, new Object[] { action });
             }
             else
             {

@@ -5,16 +5,30 @@ VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoupedeckCtTool", "LoupedeckCtTool\LoupedeckCtTool.csproj", "{83D8067A-DF3B-4D1D-B8DE-12DBB758B92F}"
 EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "WixInstaller", "WixInstaller\WixInstaller.wixproj", "{D5DFD857-7A17-48E5-B47D-217EF5F2FBF3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{83D8067A-DF3B-4D1D-B8DE-12DBB758B92F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{83D8067A-DF3B-4D1D-B8DE-12DBB758B92F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83D8067A-DF3B-4D1D-B8DE-12DBB758B92F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{83D8067A-DF3B-4D1D-B8DE-12DBB758B92F}.Debug|x86.Build.0 = Debug|Any CPU
 		{83D8067A-DF3B-4D1D-B8DE-12DBB758B92F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83D8067A-DF3B-4D1D-B8DE-12DBB758B92F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83D8067A-DF3B-4D1D-B8DE-12DBB758B92F}.Release|x86.ActiveCfg = Release|Any CPU
+		{83D8067A-DF3B-4D1D-B8DE-12DBB758B92F}.Release|x86.Build.0 = Release|Any CPU
+		{D5DFD857-7A17-48E5-B47D-217EF5F2FBF3}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{D5DFD857-7A17-48E5-B47D-217EF5F2FBF3}.Debug|x86.ActiveCfg = Debug|x86
+		{D5DFD857-7A17-48E5-B47D-217EF5F2FBF3}.Debug|x86.Build.0 = Debug|x86
+		{D5DFD857-7A17-48E5-B47D-217EF5F2FBF3}.Release|Any CPU.ActiveCfg = Release|x86
+		{D5DFD857-7A17-48E5-B47D-217EF5F2FBF3}.Release|x86.ActiveCfg = Release|x86
+		{D5DFD857-7A17-48E5-B47D-217EF5F2FBF3}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

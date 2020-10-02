@@ -106,4 +106,7 @@
     <PreBuildEvent>
     </PreBuildEvent>
   </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>$(ProjectDir)\post_build.bat $(SolutionDir) $(ConfigurationName)</PostBuildEvent>
+  </PropertyGroup>
 </Project>

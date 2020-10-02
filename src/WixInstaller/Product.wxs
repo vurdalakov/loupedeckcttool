@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?define CompanyName="Vurdalakov"?>
+<?define ProductName="Loupedeck CT Tool"?>
+<?define ProductVersion="!(bind.FileVersion.$(var.LoupedeckCtTool.TargetFileName))"?>
+<?define ProductFullName="$(var.ProductName) $(var.ProductVersion)"?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="$(var.ProductFullName)" Language="1033" Version="1.2" Manufacturer="Vurdalakov" UpgradeCode="d82042e4-64a6-4263-88c9-d6ed6fa8a25b">
+		<Package InstallerVersion="301" Compressed="yes" InstallScope="perMachine" Platform="x64" />
+
+        <Property Id="ARPNOREPAIR" Value="yes" Secure="yes" />
+        <Property Id="ARPNOMODIFY" Value="yes" Secure="yes" />
+
+        <MajorUpgrade AllowSameVersionUpgrades="yes" DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+        <Media Id="1" Cabinet="LoupedeckCtTool.cab" EmbedCab="yes" />
+
+        <Feature Id="ProductFeature" Title="$(var.ProductName)" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+
+        <UI Id="UserInterface">
+            <Property Id="WIXUI_INSTALLDIR" Value="TARGETDIR" />
+            <Property Id="WixUI_Mode" Value="Custom" />
+
+            <TextStyle Id="WixUI_Font_Normal" FaceName="Tahoma" Size="8" />
+            <TextStyle Id="WixUI_Font_Bigger" FaceName="Tahoma" Size="9" Bold="yes" />
+            <TextStyle Id="WixUI_Font_Title"    FaceName="Tahoma" Size="9" Bold="yes" />
+
+            <Property Id="DefaultUIFont" Value="WixUI_Font_Normal" />
+
+            <DialogRef Id="ProgressDlg" />
+            <DialogRef Id="ErrorDlg" />
+            <DialogRef Id="FilesInUse" />
+            <DialogRef Id="FatalError" />
+            <DialogRef Id="UserExit" />
+
+            <Publish Dialog="ExitDialog" Control="Finish" Event="EndDialog" Value="Return" Order="999">1</Publish>
+
+            <InstallUISequence>
+                <Show Dialog="ExitDialog" OnExit="success">0</Show>
+            </InstallUISequence>
+        </UI>
+
+        <UIRef Id="WixUI_Common" />
+    </Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+                <Directory Id="COMPANYFOLDER" Name="$(var.CompanyName)">
+                    <Directory Id="INSTALLFOLDER" Name="$(var.ProductName)" />
+                </Directory>
+            </Directory>
+
+            <Directory Id="ProgramMenuFolder" />
+        </Directory>
+    </Fragment>
+
+    <Fragment>
+        <ComponentGroup Id="ProductComponents">
+            <Component Id="ProductFiles" Directory="INSTALLFOLDER">
+                <File Id="LoupedeckCtTool.exe" Source="$(var.LoupedeckCtTool.TargetPath)" />
+                <File Id="LoupedeckCtTool.exe.config" Source="$(var.LoupedeckCtTool.TargetDir)LoupedeckCtTool.exe.config" />
+                <File Id="Microsoft.Management.Infrastructure.dll" Source="$(var.LoupedeckCtTool.TargetDir)Microsoft.Management.Infrastructure.dll" />
+                <File Id="System.Management.Automation.dll" Source="$(var.LoupedeckCtTool.TargetDir)System.Management.Automation.dll" />
+            </Component>
+
+            <Component Id="StartMenuShortcuts" Directory="ProgramMenuFolder" Guid="d82042e4-64a6-4263-88c9-d6ed6fa8a25f">
+                <Shortcut Id="ApplicationStartMenuShortcut" Name="$(var.ProductName)" Description="Starts $(var.ProductName)" Target="[INSTALLFOLDER]LoupedeckCtTool.exe" WorkingDirectory="INSTALLFOLDER"/>
+                <RemoveFolder Id="ProgramMenuFolder" On="uninstall"/>
+                <RegistryValue Root="HKCU" Key="Software\$(var.CompanyName)\$(var.ProductName)" Name="StartMenu" Type="integer" Value="1" KeyPath="yes"/>
+            </Component>
+
+        </ComponentGroup>
+    </Fragment>
+</Wix>
